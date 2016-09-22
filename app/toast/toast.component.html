@@ -1,0 +1,8 @@
+<div *ngIf="hidden==false" class="toast {{toast.theme + ' ' + toast.type}}">
+  <a *ngIf="toast.showClose" href="#" (click)="setClose()" class="close-button"></a>
+  <div *ngIf="toast.title || toast.msg" class="toast-text" >
+    <span *ngIf="toast.title" class="toast-title" >{{toast.title}}</span>
+    <br *ngIf="toast.title && toast.msg" />
+    <span *ngIf="toast.msg" class="toast-msg" >{{toast.msg}}</span>  
+  </div>
+</div>
