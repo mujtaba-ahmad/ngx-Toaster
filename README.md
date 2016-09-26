@@ -1,5 +1,5 @@
 # Angular 2 Toaster
-Angular2 Toaster component is compatible with latest release of Angular 2.X.X for showing alerts and messages for your application.
+Angular 2 Toaster component is compatible with latest release of Angular 2.X.X for showing alerts and messages for your application.
 
 ## Usage
 Follow these steps:
@@ -13,7 +13,7 @@ Follow these steps:
 - Add following tag in template of your application component. 
 
 ```ts
-<ng2-toaster [position]=position [theme]=theme ></ng2-toaster>
+<toaster [position]=position [theme]=theme ></toaster>
 ```
 
 - Select the Theme [`default`, `bootstrap`, `material`].
@@ -23,13 +23,12 @@ Follow these steps:
 - Assign them as shown below:
 
 ```ts
-<ng2-toaster [position]="top-right" [theme]="bootstrap" ></ng2-toaster>
+<toaster [position]="top-right" [theme]="bootstrap" ></toaster>
 ```
 
 
 #### 2. Import the `ToasterModule`
-Import `ToasterModule.forRoot()` in the NgModule of your application. 
-The `forRoot` method is a convention for modules that provide a singleton service.
+Import `ToasterModule` in the NgModule of your application. 
 
 ```ts
 import {BrowserModule} from "@angular/platform-browser";
@@ -39,7 +38,7 @@ import {ToasterModule} from 'angular2-toaster';
 @NgModule({
     imports: [
         BrowserModule,
-        ToasterModule.forRoot()
+        ToasterModule
     ],
     bootstrap: [AppComponent]
 })
@@ -52,7 +51,7 @@ export class AppModule {
 
 ```ts
 import {Component} from '@angular/core';
-import {ToastyService} from 'angular2-toaster';
+import {ToasterService} from 'angular2-toaster';
 
 @Component({
     selector: 'app',
@@ -79,7 +78,7 @@ export class AppComponent {
 ```
 
 # Credits 
-Inspired by [angular-toasty](https://github.com/teamfa/angular-toasty)
+Inspired by [ng2-toasty](https://github.com/akserg/ng2-toasty/)
 
 # License
  [MIT](/LICENSE)
