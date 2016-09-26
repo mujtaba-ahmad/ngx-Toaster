@@ -1,47 +1,24 @@
+# Angular 2 Toaster
+-Angular2 Toaster component is compatible with latest release of Angular 2.X.X.
+-Used to show alerts and messages for your application.
 
-Angular 2 Toaster
-=================
+## Usage
+Follow these steps:
 
-##Description:
+#### 1. Update the markup
+- Import style into your web page. Choose one of the following files;
+  - `style-default.css` - Contains DEFAULT theme
+  - `style-bootstrap.css` - Contains Bootstrap 3 theme
+  - `style-material.css` - Contains Material Design theme
 
-  Compatible with the new and Final Release of Angular 2.
+- Add `<ng2-toaster></ng2-toaster>` tag in template of your application component.
 
-##Usage:
+- Select the Theme [`default`, `bootstrap`, `material`].
 
-1. Importing Component:
+- Select the Position [`top-left`, `top-right`, `top-center`, `bottom-left`, `bottom-right`, `bottom-center`]
 
-  -> Add this code to component in which you want to use toaster:
+- Assign them as shown below:
 
-   ```javascript
-      import { IToast } from '../toast/toast'
-      import { IToastComponent } from '../itoast/itoast.component'
-    ````
-
-2. In your Component make variable:
-
-  ```javascript
-      toast:IToast;
-  ```
-
-3. In Your Template File:
-  ```javascript
-    <itoast [position]="'top-right'" [toast]="toast"></itoast>
-
-  // You can change 'top-right' with:
-    top-left
-    top-center
-    bottom-left
-    bottom-right
-    bottom-center
-  ```
-
-4. Make Toast in any function of your Component: 
-
-  . this.toast = <IToast>{
-      title: "Angular 2 Toast",
-      msg: "Compatible with Angular 2 latest build",
-      showClose: true,
-      timeout: 5000,
-      theme: "bootstrap",
-      type: "success"
-    };
+```ts
+<ng2-toaster [position]=position [theme]=theme ></ng2-toaster>
+```
