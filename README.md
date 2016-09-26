@@ -11,14 +11,16 @@ Follow these steps:
   - `style-bootstrap.css` - Contains Bootstrap 3 theme
   - `style-material.css` - Contains Material Design theme
 
-- Add `<ng2-toaster></ng2-toaster>` tag in template of your application component.
+```ts
+<toaster [position]=position [theme]=theme ></toaster>
+```
 
 - Select the Theme [`default`, `bootstrap`, `material`].
 
 - Select the Position [`top-left`, `top-right`, `top-center`, `bottom-left`, `bottom-right`, `bottom-center`]
 
 - Assign them as shown below:
-
+  
 ```ts
-<ng2-toaster [position]=position [theme]=theme ></ng2-toaster>
+<toaster [position]="bootstrap" [theme]="top-right" ></toaster>
 ```
