@@ -4,12 +4,13 @@ Angular2 Toaster component is compatible with latest release of Angular 2.X.X fo
 ## Usage
 Follow these steps:
 
-#### 1. Update the markup
-- Import style into your web page. Choose one of the following files:
+#### 1. Update the index.html
+- Import style into your index.html. Choose one of the following files:
   - `style-default.css` - Contains DEFAULT theme
   - `style-bootstrap.css` - Contains Bootstrap 3 theme
   - `style-material.css` - Contains Material Design theme
 
+- Add following tag in template of your application component. 
 
 ```ts
 <ng2-toaster [position]=position [theme]=theme ></ng2-toaster>
@@ -67,7 +68,7 @@ export class AppComponent {
     }
     
     addToast() {
-        // Add see all possible types in one shot
+        // See all possible types in one shot
         this._toaster.success('title', 'message', true, 1000);
         this._toaster.error('title', 'message', true, 2000);
         this._toaster.info('title', 'message', true, 3000);
