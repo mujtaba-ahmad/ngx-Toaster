@@ -120,7 +120,7 @@ export class AppModule {
 ```
 
 # Credits 
-Inspired by [ng2-toasty](https://github.com/akserg/ng2-toasty/)
+Inspired by [angular-toasty](https://github.com/teamfa/angular-toasty)
 
 # License
  [MIT](/LICENSE)
