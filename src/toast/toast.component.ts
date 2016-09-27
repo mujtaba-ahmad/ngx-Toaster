@@ -17,13 +17,11 @@ export class ToastComponent implements OnChanges {
     @Input() theme: string;
     @Output('closeToast') closeToastEvent = new EventEmitter();
 
-
     close($event: any) {
         $event.preventDefault();
         this.closeToastEvent.next(this.toast);
     }
 
     ngOnChanges(): any {
-        console.log(this.toast);
     }
 }

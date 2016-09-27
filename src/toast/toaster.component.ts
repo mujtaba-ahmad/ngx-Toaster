@@ -39,7 +39,6 @@ export class ToasterComponent implements OnInit, OnChanges{
         );
     }
     ngOnChanges(): any {
-        console.log(this.position)
         this.position = '';
         this.position = this.position.indexOf(ToasterComponent.POSITIONS) > -1 ? this.position : 'top-right';
         this.position = 'toaster-position-' + this.position;
