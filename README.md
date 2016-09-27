@@ -19,7 +19,7 @@ map: {
 packages: {
       //...
       'angular2-toastr': {
-        main: './angular2-toastr.js',
+        main: './index.js',
         defaultExtension: 'js'
       }
 ```
@@ -50,7 +50,7 @@ packages: {
 - Assign them as shown below:
 
 ```ts
-<ng2-toaster [position]="top-right" [theme]="bootstrap" ></ng2-toaster>
+<ng2-toaster [position]="'top-right'" [theme]="'bootstrap'" ></ng2-toaster>
 ```
 
 
@@ -60,11 +60,11 @@ Import Components in the NgModule of your application as shown below:
 ```ts
 import {BrowserModule} from "@angular/platform-browser";
 import {NgModule} from '@angular/core';
-import {ToasterComponent} from 'angular2-toastr';
+import {ToasterComponent, ToastComponent, ToasterAppComponent} from 'angular2-toastr/index';
 
 @NgModule({
     imports: [ BrowserModule ],
-    declarations: [ToasterComponent]
+    declarations: [ToasterComponent, ToastComponent, ToasterAppComponent]
     bootstrap: [AppComponent]
 })
 export class AppModule {
@@ -76,10 +76,11 @@ export class AppModule {
 
 ```ts
 import {Component} from '@angular/core';
-import {ToasterService} from 'angular2-toaster';
+import {ToasterService} from 'angular2-toaster/index';
 
 @Component({
     selector: 'app',
+    providers: [ToasterService],
     template: `
         <div>Hello world</div>
         <button (click)="addToast()">Add Toast</button>
@@ -99,6 +100,22 @@ export class AppComponent {
         this._toaster.warning('title', 'message', true, 4000);
         this._toaster.wait('title', 'message', true, 0);
     }
+}
+```
+OR
+- Add Service Globally in NgModule :
+```ts
+import {BrowserModule} from "@angular/platform-browser";
+import {NgModule} from '@angular/core';
+import {ToasterComponent, ToastComponent, ToasterAppComponent, ToasterService} from 'angular2-toastr/index';
+
+@NgModule({
+    imports: [ BrowserModule ],
+    declarations: [ToasterComponent, ToastComponent, ToasterAppComponent],
+    providers: [ToasterService],
+    bootstrap: [AppComponent]
+})
+export class AppModule {
 }
 ```
 
