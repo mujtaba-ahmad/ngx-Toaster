@@ -4,13 +4,13 @@ Angular 2 Toastr component is compatible with latest release of Angular 2.X.X fo
 ## Usage
 Follow these steps:
 
-#### 1. Update your `systemjs.config.js` file.
+### 1. Update your `systemjs.config.js` file.
 -Add following line in map:
 
 ```js
 map: {
       //...
-      'angular2-toaster': 'npm:angular2-toaster'
+      'angular2-toastr': 'npm:angular2-toastr'
      }
 ```
 -and in packages:
@@ -18,13 +18,13 @@ map: {
 ```js
 packages: {
       //...
-      'angular2-toaster': {
-        main: './angular2-toaster.js',
+      'angular2-toastr': {
+        main: './angular2-toastr.js',
         defaultExtension: 'js'
       }
 ```
 
-#### 2. Update the index.html
+### 2. Update the index.html
 
 - Import style into your index.html. Choose one of the following files:
   - `style-default.css` - Contains DEFAULT theme
@@ -36,11 +36,11 @@ packages: {
   - Copy and paste these files in your application.
   - Link them in your index.html
 
-#### 2. Your Component:
+### 2. Your Component:
 - Add following tag in template of your component where you intend to use . 
 
 ```ts
-<toaster [position]=position [theme]=theme ></toaster>
+<ng2-toaster [position]=position [theme]=theme ></ng2-toaster>
 ```
 
 - Select the Theme [`default`, `bootstrap`, `material`].
@@ -50,11 +50,11 @@ packages: {
 - Assign them as shown below:
 
 ```ts
-<toaster [position]="top-right" [theme]="bootstrap" ></toaster>
+<ng2-toaster [position]="top-right" [theme]="bootstrap" ></ng2-toaster>
 ```
 
 
-#### 3. Import the `Components`
+### 3. Import the `Components`
 Import Components in the NgModule of your application as shown below:
 
 ```ts
@@ -71,7 +71,7 @@ export class AppModule {
 }
 ```
 
-#### 4. Use the `ToasterService` for your application
+### 4. Use the `ToasterService` for your application
 - Import `ToasterService` from `angular2-toaster` in your application code:
 
 ```ts
