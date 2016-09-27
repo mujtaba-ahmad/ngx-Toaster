@@ -36,7 +36,8 @@ packages: {
   - Copy and paste these files in your application.
   - Link them in your index.html
 
-- Add following tag in template of your application component. 
+#### 2. Your Component:
+- Add following tag in template of your component where you intend to use . 
 
 ```ts
 <toaster [position]=position [theme]=theme ></toaster>
