@@ -1,5 +1,5 @@
 {
-  "name": "angular2-toaster",
+  "name": "angular2-toastr",
   "version": "1.0.0",
   "description": "Inspired by [angular-toastr] (https://github.com/Foxandxss/angular-toastr) for AngularJS 2.x",
   "repository": {
