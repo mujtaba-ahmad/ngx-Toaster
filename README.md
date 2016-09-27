@@ -1,14 +1,20 @@
-# Angular 2 Toaster
-Angular 2 Toaster component is compatible with latest release of Angular 2.X.X for showing alerts and messages for your application.
+# Angular 2 Toastr
+Angular 2 Toastr component is compatible with latest release of Angular 2.X.X for showing alerts and messages for your application.
 
 ## Usage
 Follow these steps:
 
 #### 1. Update the index.html
+
 - Import style into your index.html. Choose one of the following files:
   - `style-default.css` - Contains DEFAULT theme
   - `style-bootstrap.css` - Contains Bootstrap 3 theme
   - `style-material.css` - Contains Material Design theme
+  
+  OR
+- Copy and Paste :
+  - Copy and paste these files in your application.
+  - Link them in your index.html
 
 - Add following tag in template of your application component. 
 
@@ -27,19 +33,17 @@ Follow these steps:
 ```
 
 
-#### 2. Import the `ToasterModule`
-Import `ToasterModule` in the NgModule of your application. 
+#### 2. Import the `Components`
+Import Components in the NgModule of your application as shown below:
 
 ```ts
 import {BrowserModule} from "@angular/platform-browser";
 import {NgModule} from '@angular/core';
-import {ToasterModule} from 'angular2-toaster';
+import {ToasterComponent} from 'angular2-toastr';
 
 @NgModule({
-    imports: [
-        BrowserModule,
-        ToasterModule
-    ],
+    imports: [ BrowserModule ],
+    declarations: [ToasterComponent]
     bootstrap: [AppComponent]
 })
 export class AppModule {
@@ -58,7 +62,7 @@ import {ToasterService} from 'angular2-toaster';
     template: `
         <div>Hello world</div>
         <button (click)="addToast()">Add Toast</button>
-        <toaster [position]="top-right" [theme]="bootstrap" ></toaster>
+        <toaster [position]="'top-right'" [theme]="'bootstrap'" ></toaster>
     `
 })
 export class AppComponent {
