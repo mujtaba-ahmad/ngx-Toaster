@@ -12,7 +12,7 @@ import { ToasterComponent } from './toast/toaster.component';
                 <ng2-toaster [position]=position [theme]=theme ></ng2-toaster>`,
     providers: [ ToasterService ]
 })
-export class AppComponent {
+export class ToasterAppComponent {
     public position;
     public theme;
     constructor(private _toaster: ToasterService) {
