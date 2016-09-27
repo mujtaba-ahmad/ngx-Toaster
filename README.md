@@ -93,7 +93,8 @@ export class AppComponent {
     }
     
     addToast() {
-        // See all possible types in one shot
+        // See all possible types in one shot.
+        // pass parameters as (title:string, message:string, show_close_button:boolean, timeout:number)
         this._toaster.success('title', 'message', true, 1000);
         this._toaster.error('title', 'message', true, 2000);
         this._toaster.info('title', 'message', true, 3000);
