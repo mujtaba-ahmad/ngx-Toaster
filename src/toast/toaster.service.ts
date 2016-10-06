@@ -1,8 +1,6 @@
 import { Injectable, EventEmitter} from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import { AsyncSubject } from 'rxjs/AsyncSubject';
-import { Subject } from 'rxjs/Subject';
 
 import { Itoast } from './Itoast';
 
