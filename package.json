@@ -21,7 +21,10 @@
     "messages",
     "angular2",
     "angular 2",
-    "ng2"
+    "ng2",
+    "grawl",
+     "notifications",
+     "toastr"
   ],
   "license": "MIT",
   "dependencies": {
