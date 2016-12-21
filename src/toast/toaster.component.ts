@@ -15,9 +15,9 @@ export class ToasterComponent implements OnInit, OnChanges{
     toasts: Array<Itoast>;
     static POSITIONS: Array<String> = ['bottom-right', 'bottom-left', 'top-right', 'top-left', 'top-center', 'bottom-center'];
     static THEMES: Array<string> = ['default', 'material', 'bootstrap'];
-    @Input() position;
-    @Input() theme;
-    @Input() limit;
+    @Input() position: any;
+    @Input() theme: any;
+    @Input() limit: any;
 
     constructor(private _toasterService: ToasterService) {
         this.position = 'toaster-position-top-right';
