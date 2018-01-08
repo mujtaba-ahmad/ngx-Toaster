@@ -37,13 +37,10 @@ export class ToasterComponent implements OnInit, OnChanges{
             }
         );
         this._toasterService.getAllToasts();
-        // this._toasterService.toastsEmitter.subscribe(res => {
-        //   debugger;
-        // });
     }
     ngOnChanges(): any {
-        this.position = '';
-        this.position = this.position.indexOf(ToasterComponent.POSITIONS) > -1 ? this.position : 'top-right';
+        // this.position = '';
+        this.position = ToasterComponent.POSITIONS.indexOf(this.position) > -1 ? this.position : 'top-right';
         this.position = 'toaster-position-' + this.position;
 
         // this.theme = '';
