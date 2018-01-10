@@ -1,3 +1,5 @@
+# Note
+Use Master branch, for Installation of package.
 # Angular 5 Toaster
 Angular 5 Toaster component is compatible with latest release of Angular 5.X.X for showing alerts and messages for your application.
 
