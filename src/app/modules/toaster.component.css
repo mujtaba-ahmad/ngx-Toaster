@@ -1,0 +1,33 @@
+#toaster {
+  position: fixed;
+  z-index: 999999;
+  /* Positioning */
+}
+#toaster.toaster-position-top-left {
+  top: 12px;
+  left: 12px;
+}
+#toaster.toaster-position-top-right {
+  top: 12px;
+  right: 12px;
+}
+#toaster.toaster-position-bottom-right {
+  bottom: 12px;
+  right: 12px;
+}
+#toaster.toaster-position-bottom-left {
+  bottom: 12px;
+  left: 12px;
+}
+#toaster.toaster-position-top-center {
+  top: 12px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+}
+#toaster.toaster-position-bottom-center {
+  bottom: 12px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+}

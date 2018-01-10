@@ -8,7 +8,8 @@ import { Itoast } from './interface/itoast';
     selector: 'ngx-toaster',
     template: `<div id="toaster" [ngClass]="[position]">
                     <ngx-toast [theme]=theme *ngFor="let toast of toasts" [toast]="toast" (closeToast)="closeToast(toast)"></ngx-toast>
-                </div>`
+                </div>`,
+    styleUrls: ["./toaster.component.css"]
 })
 export class ToasterComponent implements OnInit, OnChanges{
 

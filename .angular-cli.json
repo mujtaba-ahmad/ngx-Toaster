@@ -19,11 +19,7 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css",
-        "app/modules/assets/css/style.css",
-        "app/modules/assets/css/style-toaster-bootstrap.css",
-        "app/modules/assets/css/style-default.css",
-        "app/modules/assets/css/style-material.css"
+        "styles.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
