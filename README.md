@@ -43,13 +43,14 @@ Include ToasterModule in your app.module.ts file
 
 * Select the Position [`top-left`, `top-right`, `top-center`, `bottom-left`, `bottom-right`, `bottom-center`]
 
-* Click Event is for demo purpose, so we can display all notifications.
-
 * Assign them as shown below:
 
 ```ts
 <ngx-toaster [position]="'top-right'" [theme]="'bootstrap'" (click)="popupPushNotification()"></ngx-toaster>
+<button (click)="popupPushNotification()">Click</button>
 ```
+
+* Button tag is for demo purpose, so we can display all notifications through Click Event.
 
 ### 3. Import the ToasterService in Component
 Import ToasterService in component of your application as shown below:
@@ -82,7 +83,7 @@ import { ToasterService } from 'ngx-toaster';
 export class AppComponent {
   title = 'app';
 
-  constructor(private _toaster: ToasterService){}
+  constructor(private _toaster: ToasterService){}                 <------
 
   popupPushNotification(){
     this._toaster.warning('Warning', 'message', true, 1000);      <------
