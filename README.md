@@ -1,123 +1,99 @@
 # Angular 5 Toaster
 Angular 5 Toaster component is compatible with latest release of Angular 5.X.X for showing alerts and messages for your application.
 
+## Installation
+ * Download dist folder
+ * Install package by executing command 'npm install "download-path/dist/ngx-toaster-0.0.0.tgz"'
+
 ## Usage
 Follow these steps:
 
-### 1. Update your `systemjs.config.js` file.
--Add following line in map:
+### 1. Update the app.module.ts
+Include ToasterModule in your app.module.ts file
+```ts
+  import { BrowserModule } from '@angular/platform-browser';
+  import { NgModule } from '@angular/core';
 
-```js
-map: {
-      //...
-      'angular2-toastr': 'npm:angular2-toastr'
-     }
+
+  import { AppComponent } from './app.component';
+  import { ToasterModule } from 'ngx-toaster';      <------
+
+  @NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    ToasterModule                                   <------
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+  })
+  export class AppModule { }
+
 ```
--and in packages:
-
-```js
-packages: {
-      //...
-      'angular2-toastr': {
-        main: './index.js',
-        defaultExtension: 'js'
-      }
-```
-
-### 2. Update the index.html
-
-- Import style into your index.html. Choose one of the following files:
-  - `style-default.css` - Contains DEFAULT theme
-  - `style-bootstrap.css` - Contains Bootstrap 3 theme
-  - `style-material.css` - Contains Material Design theme
-
-  OR
-- Copy and Paste :
-  - Copy and paste these files in your application.
-  - Link them in your index.html
-
-### 2. Your Component:
-- Add following tag in template of your component where you intend to use .
+### 2. Update Your Component:
+* Add following tag in template of your component i.e; `app.component.html`.
 
 ```ts
-<ng2-toaster [position]=position [theme]=theme ></ng2-toaster>
+<ngx-toaster [position]=position [theme]=theme (click)="popupPushNotification()"></ngx-toaster>
 ```
 
-- Select the Theme [`default`, `bootstrap`, `material`].
+* Select the Theme [`default`, `bootstrap`, `material`].
 
-- Select the Position [`top-left`, `top-right`, `top-center`, `bottom-left`, `bottom-right`, `bottom-center`]
+* Select the Position [`top-left`, `top-right`, `top-center`, `bottom-left`, `bottom-right`, `bottom-center`]
 
-- Assign them as shown below:
+* Click Event is for demo purpose, so we can display all notifications.
+
+* Assign them as shown below:
 
 ```ts
-<ng2-toaster [position]="'top-right'" [theme]="'bootstrap'" ></ng2-toaster>
+<ngx-toaster [position]="'top-right'" [theme]="'bootstrap'" (click)="popupPushNotification()"></ngx-toaster>
 ```
 
-
-### 3. Import the `Components`
-Import Components in the NgModule of your application as shown below:
-
-```ts
-import {BrowserModule} from "@angular/platform-browser";
-import {NgModule} from '@angular/core';
-import {ToasterComponent, ToastComponent, ToasterAppComponent} from 'angular2-toastr/index';
-
-@NgModule({
-    imports: [ BrowserModule ],
-    declarations: [ToasterComponent, ToastComponent, ToasterAppComponent]
-    bootstrap: [AppComponent]
-})
-export class AppModule {
-}
-```
-
-### 4. Use the `ToasterService` for your application
-- Import `ToasterService` from `angular2-toaster` in your application code:
+### 3. Import the ToasterService in Component
+Import ToasterService in component of your application as shown below:
 
 ```ts
-import {Component} from '@angular/core';
-import {ToasterService} from 'angular2-toaster/index';
+import { Component } from '@angular/core';
+import { ToasterService } from 'ngx-toaster';     <------
 
 @Component({
-    selector: 'app',
-    providers: [ToasterService],
-    template: `
-        <div>Hello world</div>
-        <button (click)="addToast()">Add Toast</button>
-        <toaster [position]="'top-right'" [theme]="'bootstrap'" ></toaster>
-    `
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
-    constructor(private _toaster: ToasterService) {
-    }
-
-    addToast() {
-        // See all possible types in one shot.
-        // pass parameters as (title:string, message:string, show_close_button:boolean, timeout:number)
-        this._toaster.success('title', 'message', true, 1000);
-        this._toaster.error('title', 'message', true, 2000);
-        this._toaster.info('title', 'message', true, 3000);
-        this._toaster.warning('title', 'message', true, 4000);
-        this._toaster.wait('title', 'message', true, 0);
-    }
+  title = 'app';
 }
 ```
-OR
-- Add Service Globally in NgModule :
-```ts
-import {BrowserModule} from "@angular/platform-browser";
-import {NgModule} from '@angular/core';
-import {ToasterComponent, ToastComponent, ToasterAppComponent, ToasterService} from 'angular2-toastr/index';
 
-@NgModule({
-    imports: [ BrowserModule ],
-    declarations: [ToasterComponent, ToastComponent, ToasterAppComponent],
-    providers: [ToasterService],
-    bootstrap: [AppComponent]
+### 4. Use the ToasterService in Component
+
+```ts
+import { Component } from '@angular/core';
+import { ToasterService } from 'ngx-toaster';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
-export class AppModule {
+export class AppComponent {
+  title = 'app';
+
+  constructor(private _toaster: ToasterService){}
+
+  popupPushNotification(){
+    this._toaster.warning('Warning', 'message', true, 1000);      <------
+    this._toaster.info('Information', 'message3', true, 2000);    <------
+    this._toaster.success('Success', 'message1', true, 3000);     <------
+    this._toaster.error('Error', 'message2', true, 4000);         <------
+    this._toaster.wait('Wait', 'message', true, 5000);            <------
+  }
+
 }
+
 ```
 
 # Credits
